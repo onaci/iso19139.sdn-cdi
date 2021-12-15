@@ -180,7 +180,7 @@
                   </gmd:referenceSystemIdentifier>
                </gmd:MD_ReferenceSystem>
             </gmd:referenceSystemInfo>
-         <gmd:metadataExtensionInfo xlink:href="http://schemas.seadatanet.org/Standards-Software/Metadata-formats/extensionInformation.xml"/>
+         <gmd:metadataExtensionInfo xlink:href="http://schemas.seadatanet.org/Standards-Software/Metadata-formats/cdiExtensionInformation.xml"/>
 		   <gmd:identificationInfo>
 			  <gmd:MD_DataIdentification>
 				 <gmd:citation>
