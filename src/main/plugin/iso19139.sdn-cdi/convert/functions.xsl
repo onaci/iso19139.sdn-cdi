@@ -86,6 +86,23 @@
 			</xsl:variable>
 			<xsl:value-of select="concat(date:year($now),'-',$month,'-',$day,'T23:59:59')"/>
 		</xsl:when>
+                <xsl:when test="matches($value, '^[0-3]?\d/[01]?\d/[12]{1}\d{3}')">
+                        <!-- Assume dd/mm/yyyy, but dd and mm could both be single-characters -->
+                        <xsl:variable name="dim" select="tokenize($value,'/')[1]" />
+                        <xsl:variable name="day">
+                                <xsl:call-template name="fixSingle">
+                                        <xsl:with-param name="value" select="$dim"/>
+                                </xsl:call-template>
+                        </xsl:variable>
+                        <xsl:variable name="miy" select="tokenize($value, '/')[2]" />
+                        <xsl:variable name="month">
+                                <xsl:call-template name="fixSingle">
+                                        <xsl:with-param name="value" select="$miy"/>
+                                </xsl:call-template>
+                        </xsl:variable>
+                        <xsl:variable name="year" select="substring(tokenize($value, '/')[3],1,4)" />
+                        <xsl:value-of select="concat($year,'-',$month,'-',$day,'T23:59:59')" />
+                </xsl:when>
 		<xsl:otherwise>
 			<xsl:value-of select="$value"/>
 		</xsl:otherwise>
