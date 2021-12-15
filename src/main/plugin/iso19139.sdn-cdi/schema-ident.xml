@@ -5,6 +5,7 @@
 	<name>iso19139.sdn-cdi</name>
 	<id>5495f7a0-14e3-49ad-8814-5aa9b892a8f4</id>
 	<version>1.0</version>
+	<appMinorVersionSupported>3.4.0</appMinorVersionSupported>
 	<depends>iso19139</depends>
 	<!-- Profile XSD location -->
 	<schemaLocation>http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd 
